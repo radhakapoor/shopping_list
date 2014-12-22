@@ -1,16 +1,11 @@
 
-// deleting items from the list - use hide() or fade
-
-// $(document).ready(function() {
-// 	$('#deletebutton').hide();
-// })
-
 $(document).ready(function() {
     $('#submit').click(function(){
-    	var item = $('#item').val(); 
-    	// var deletebutton = $('#deletebutton');   	
+    	var item = $('#item').val();
+    	var delete_button = '<input type="button" value="delete"/>';
+    	var item = $('<li>'+item+' '+delete_button+'</li>');   	  	
     	$('#list').append("<br>");
-    	$('#list').append("<li>"+item+"</li>");	        
+    	$('#list').append(item);	        
 	    $('#form')[0].reset();	    	        
     })
 });
@@ -18,24 +13,27 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#form').on('keydown', function(e) {
 		var item = $('#item').val();
+		var delete_button = '<input type="button" value="delete"/>';
 		var code = e.which;
-		// var deletebutton = $('#deletebutton');  		
+		var item = $('<li>'+item+' '+delete_button+'</li>');		 		
 		if (code==13){
-			$('#list').append("<br>");
-			$('#list').append("<li>"+item+"</li>");					
+			$('#list').append("<br>");			
+			$('#list').append(item);										
 			$('#form')[0].reset();
 			return false;					
-		}
+		}		
 	})
 });
 
-$(document).ready(function() {
-	$('<li>').click(function() {
-		$(this).hide();
+// #this fires upon click of 'li' element, should really be on click of the button
+$(document).ready(function() {	
+	// var delete_button = $('<input type="button" value="delete"/>');
+	$('#list').on('click', 'li', function() {		
+		$(this).remove();
 	})
 });
+	
 
-// #try a div which contains the item and <li>
 
 
 
