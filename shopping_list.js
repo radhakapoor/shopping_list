@@ -31,6 +31,12 @@ $(document).ready(function() {
 	})
 });
 
+$(document).ready(function() {
+	$('#reset').click(function(){
+		location.reload();
+	})
+});
+
 // // #this fires upon click of 'li' element, should really be on click of the deletebutton'
 // $(document).ready(function() {	
 // 	// var delete_button = $('<input type="button" value="delete"/>');
@@ -41,6 +47,14 @@ $(document).ready(function() {
 
 // error if add same item twice
 // slide-up for deleted items
+// slide down for added items 
+
+// $('#clickme').click(function() {
+// 	$('#book').fadeIn('slow', function() {
+// 	});
+// });
+
+
 	
 
 
