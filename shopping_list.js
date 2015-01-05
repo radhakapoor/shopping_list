@@ -6,8 +6,8 @@ var clickAddItem = function(event) {
 	if (form_input === '') {
 		alert('Shopping item field is empty!');
 		return false;	}
-	$('#list').append('<br>');
-	$('#list').append(item);
+	$('<br>').appendTo('#list');	
+	$(item).appendTo('#list').hide().fadeIn(1500);	
 	$('#form')[0].reset();
 };
 
@@ -21,22 +21,12 @@ var enterAddItem = function(event) {
 		if (form_input === '') {
 		alert('Shopping item field is empty!');
 		return false;   }
-		$('#list').append('<br>');
-		$('#list').append(item);
+		$('<br>').appendTo('#list');		
+		$(item).appendTo('#list').hide().fadeIn(1500);		
 		$('#form')[0].reset();
 		return false;
 	}
 };
-
-// var AddItem = function(event) {
-// 	var form_input = $('#item').val();
-// 	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
-// 	var delete_button = '<input type="button" value="delete" class="delete"/>';
-// 	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'<li>');
-// 	$('#list').append('<br>');
-// 	$('#list').append(item);
-// 	$('#form')[0].reset();
-// };
 
 var purchaseItem = function(event) {
 	$(event.currentTarget).parent().wrap('<strike>');
@@ -46,7 +36,7 @@ var deleteItem = function(event) {
 	$(event.currentTarget).parent().remove();
 };
 
-$(document).ready(function() {
+$(document).ready(function() {	
 	$('#submit').click(clickAddItem);	
 	$('#list').on('click', '.purchased', purchaseItem);
 	$('#list').on('click', '.delete', deleteItem);
