@@ -1,49 +1,46 @@
+var clickAddItem = function(event) {
+	var form_input = $('#item').val();
+	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
+	var delete_button = '<input type="button" value="delete" class="delete"/>';
+	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'<li>');
+	$('#list').append('<br>');
+	$('#list').append(item);
+	$('#form')[0].reset();
+};
+
+var enterAddItem = function(event) {
+	var form_input = $('#item').val();
+	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
+	var delete_button = '<input type="button" value="delete" class="delete"/>';
+	var code = event.which;
+	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'</li>');
+	if (code==13) {
+		$('#list').append('<br>');
+		$('#list').append(item);
+		$('#form')[0].reset();
+		return false;
+	}
+};
+
+var purchaseItem = function(event) {
+	$(event.currentTarget).parent().wrap('<strike>');
+};
+
+var deleteItem = function(event) {
+	$(event.currentTarget).parent().remove();
+};
 
 $(document).ready(function() {
-    $('#submit').click(function(){
-    	var form_input = $('#item').val();
-    	var delete_button = '<input type="button" value="delete"/>';
-    	var item = $('<li>'+form_input+' '+delete_button+'</li>');   	  	
-    	$('#list').append('<br>');
-    	$('#list').append(item);	        
-	    $('#form')[0].reset();	    	        
-    })
-});
-
-$(document).ready(function() {
-	$('#form').on('keydown', function(e) {
-		var form_input = $('#item').val();
-		var delete_button = '<input type="button" value="delete"/>';
-		var code = e.which;
-		var item = $('<li>'+form_input+' '+delete_button+'</li>');		 		
-		if (code==13){
-			$('#list').append('<br>');			
-			$('#list').append(item);										
-			$('#form')[0].reset();
-			return false;					
-		}		
-	})
-});
-
-$(document).ready(function() {
-	$('#list').on('click', 'li', function() {
-		$(this).wrap('<strike>');
-	})
-});
-
-$(document).ready(function() {
+	$('#submit').click(clickAddItem);
+	$('#list').on('click', '.purchased', purchaseItem);
+	$('#list').on('click', '.delete', deleteItem);
+	$('#form').on('keydown', enterAddItem);
+	$('#item').focus();
 	$('#reset').click(function(){
 		location.reload();
-	})
-});
+	});
+});    
 
-// // #this fires upon click of 'li' element, should really be on click of the deletebutton'
-// $(document).ready(function() {	
-// 	// var delete_button = $('<input type="button" value="delete"/>');
-// 	$('#list').on('click', 'li', function() {		
-// 		$(this).remove();
-// 	})
-// });
 
 // error if add same item twice
 // slide-up for deleted items
@@ -53,6 +50,11 @@ $(document).ready(function() {
 // 	$('#book').fadeIn('slow', function() {
 // 	});
 // });
+
+//checkfor emptry strings
+//local storage for items
+//loop through items to see if repeats
+//change event handler to submit
 
 
 	
