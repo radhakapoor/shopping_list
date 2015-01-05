@@ -1,8 +1,11 @@
 var clickAddItem = function(event) {
-	var form_input = $('#item').val();
+	var form_input = $('#item').val();	
 	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
 	var delete_button = '<input type="button" value="delete" class="delete"/>';
-	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'<li>');
+	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'</li>');
+	if (form_input === '') {
+		alert('Shopping item field is empty!');
+		return false;	}
 	$('#list').append('<br>');
 	$('#list').append(item);
 	$('#form')[0].reset();
@@ -13,14 +16,27 @@ var enterAddItem = function(event) {
 	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
 	var delete_button = '<input type="button" value="delete" class="delete"/>';
 	var code = event.which;
-	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'</li>');
+	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'</li>');	
 	if (code==13) {
+		if (form_input === '') {
+		alert('Shopping item field is empty!');
+		return false;   }
 		$('#list').append('<br>');
 		$('#list').append(item);
 		$('#form')[0].reset();
 		return false;
 	}
 };
+
+// var AddItem = function(event) {
+// 	var form_input = $('#item').val();
+// 	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
+// 	var delete_button = '<input type="button" value="delete" class="delete"/>';
+// 	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'<li>');
+// 	$('#list').append('<br>');
+// 	$('#list').append(item);
+// 	$('#form')[0].reset();
+// };
 
 var purchaseItem = function(event) {
 	$(event.currentTarget).parent().wrap('<strike>');
@@ -31,7 +47,7 @@ var deleteItem = function(event) {
 };
 
 $(document).ready(function() {
-	$('#submit').click(clickAddItem);
+	$('#submit').click(clickAddItem);	
 	$('#list').on('click', '.purchased', purchaseItem);
 	$('#list').on('click', '.delete', deleteItem);
 	$('#form').on('keydown', enterAddItem);
