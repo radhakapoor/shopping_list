@@ -1,8 +1,6 @@
 var addItem = function(event) {
-	var form_input = $('#item').val().trim();
-	var purchased_button = '<input type="button" value="purchased" class="purchased"/>';
-	var delete_button = '<input type="button" value="delete" class="delete"/>';
-	var item = $('<li>'+form_input+' '+purchased_button+' '+delete_button+'</li>');
+	var form_input = $('#item').val().trim();	
+	var item = $('<li class="item"><img class="purchased" src="img/checkcircle.png"><span class="shopping">' + form_input + '<img class="delete" src="img/trash.png"</li>')
 
 	if (form_input === '') {
 		alert('Shopping item field is empty!');
@@ -29,6 +27,7 @@ var purchaseItem = function(event) {
 var deleteItem = function(event) {
 	$(event.currentTarget).parent().remove();
 };
+
 
 // You can iterate using a for loop as below
 var itemInList = function(form_input) {
@@ -57,9 +56,11 @@ var itemInList = function(form_input) {
 
 $(document).ready(function() {
 	$('#form').submit(addItem);
-	$('#list').on('click', '.purchased', purchaseItem);
 	$('#list').on('click', '.delete', deleteItem);
+	$('#list').on('click', '.purchased', purchaseItem);	
 	$('#item').focus();
+	//sortable list items
+	$('#list').sortable({ axis: "y" });
 	$('#reset').click(function(){
 		location.reload();
 	});

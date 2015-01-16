@@ -1,0 +1,80 @@
+
+/*helps align the list items*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+body {	
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 24px;	
+}
+
+h1 {
+	margin-top: 40px;	
+	/*background-color: red;*/
+	text-align: center;
+}
+
+h3 {
+	margin-top: 10px;	
+	background-color: yellow;	
+}
+
+.shopping {	
+	/*background-color: blue;*/	
+}
+
+.purchased {	
+	margin-right: 180px;		
+	/*background-color: red;*/	
+}
+
+.delete {	
+	margin-left: 180px;
+	/*background-color: green;	*/
+}
+
+/*is setting the contaniner div to the width i want for the form and list the right approach? */
+.container {
+	/*position: absolute;*/
+	width: 550px;
+	margin: auto;
+	top: 150px;	
+	/*background-color: yellow;*/
+	text-align: center;
+}
+
+#form {	
+	background-color: #E3E3ED;
+	height: 40px;	
+	border-radius: 15px;
+}
+
+li {
+	color: red;
+	list-style-type: none;	
+	cursor: pointer;	
+}
+
+.item {
+	height: 40px;
+	width: 550px;
+	background-color: #E3E3ED;
+	border-radius: 15px;	
+	margin-top: 5px;	
+}
+ul {
+	margin-top: 40px;
+	background-color: red;
+	margin-bottom: 10px;
+}
+
+.reset_button {	
+	/*background-color: green;*/
+	font-size: 28px
+}
+
+
+
