@@ -23,17 +23,17 @@ h3 {
 }
 
 .shopping {	
-	/*background-color: blue;*/	
+	background-color: blue;	
 }
 
 .purchased {	
 	margin-right: 180px;		
-	/*background-color: red;*/	
+	background-color: red;	
 }
 
 .delete {	
 	margin-left: 180px;
-	/*background-color: green;	*/
+	background-color: green;	
 }
 
 /*is setting the contaniner div to the width i want for the form and list the right approach? */
@@ -42,7 +42,7 @@ h3 {
 	width: 550px;
 	margin: auto;
 	top: 150px;	
-	/*background-color: yellow;*/
+	background-color: yellow;
 	text-align: center;
 }
 
@@ -65,8 +65,7 @@ li {
 	border-radius: 15px;	
 	margin-top: 5px;	
 }
-ul {
-	margin-top: 40px;
+ul {	
 	background-color: red;
 	margin-bottom: 10px;
 }
