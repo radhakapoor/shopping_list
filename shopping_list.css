@@ -1,104 +1,63 @@
-
-/*helps align the list items*/
-*{
-	margin: 0;
-	padding: 0;
-}
-
-
-body {	
+body {
 	font-family: 'Shadows Into Light', cursive;
-	font-size: 24px;	
 }
 
 h1 {
-	margin-top: 40px;	
-	/*background-color: red;*/
+	margin-top: 40px;
 	text-align: center;
 }
 
 h3 {
-	margin-top: 10px;	
-	background-color: yellow;	
+	margin-top: 10px;
 }
 
-.shopping {	
-	background-color: blue;	
+img.purchased {
+	float: left;
 }
 
-.purchased {	
-	margin-right: 180px;		
-	background-color: red;	
+img.delete {
+	float: right;
 }
 
-.delete {	
-	margin-left: 180px;
-	background-color: green;	
-}
-
-/*is setting the contaniner div to the width i want for the form and list the right approach? */
-#container {
-	/*position: absolute;*/
+/*is setting the contaniner div to the width i want for the form and list the right approach? - yes! */
+.container {
 	width: 550px;
 	margin: auto;
-	top: 150px;	
-	background-color: yellow;
+	top: 150px;
 	text-align: center;
 }
 
-#input {	
+#form {
 	background-color: #E3E3ED;
-	border: none;
-	height: 40px;	
 	border-radius: 15px;
-	text-align: center;
-	display: inline-block;
-	line-height: 24pt;
-	margin: 15px auto;
-	width: 550px;
+	padding: 5px;
 }
-
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #dbdbdb;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #dbdbdb;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #dbdbdb;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #dbdbdb;
-}
-
-
-/*input[type=text]:focus {
-	border: none;
-	outline: none;
-}*/
-
 
 li {
-	color: red;
-	list-style-type: none;	
-	cursor: pointer;	
+	list-style-type: none;
+	cursor: pointer;
 }
 
 .item {
-	height: 40px;
-	width: 550px;
+	padding: 10px;
 	background-color: #E3E3ED;
-	border-radius: 15px;	
-	margin-top: 5px;	
+	border-radius: 15px;
+	margin-top: 5px;
 }
-ul {	
-	background-color: red;
+
+ul {
+	padding: 0px;
 	margin-bottom: 10px;
 }
 
-.reset_button {	
-	/*background-color: green;*/
-	font-size: 28px
+#reset_button p {
+	font-size: 1.2em;
+}
+
+#reset_button img {
+	margin-left: 5px;
+	width: 15px;
+	height: 15px;
 }
 
 
