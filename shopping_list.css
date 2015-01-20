@@ -37,7 +37,7 @@ h3 {
 }
 
 /*is setting the contaniner div to the width i want for the form and list the right approach? */
-.container {
+#container {
 	/*position: absolute;*/
 	width: 550px;
 	margin: auto;
@@ -46,11 +46,37 @@ h3 {
 	text-align: center;
 }
 
-#form {	
+#input {	
 	background-color: #E3E3ED;
+	border: none;
 	height: 40px;	
 	border-radius: 15px;
+	text-align: center;
+	display: inline-block;
+	line-height: 24pt;
+	margin: 15px auto;
+	width: 550px;
 }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #dbdbdb;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #dbdbdb;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #dbdbdb;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #dbdbdb;
+}
+
+
+/*input[type=text]:focus {
+	border: none;
+	outline: none;
+}*/
+
 
 li {
 	color: red;
