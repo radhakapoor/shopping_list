@@ -1,6 +1,6 @@
 var addItem = function(event) {
-	var form_input = $('#item').val().trim();	
-	var item = $('<li class="item"><img class="purchased" src="img/checkcircle.png"><span class="shopping">' + form_input + '<img class="delete" src="img/trash.png"</li>')
+	var form_input = $('#item').val().trim();
+	var item = $('<li class="item"><img class="purchased" src="img/checkcircle.png"><span>' + form_input + '</span><img class="delete" src="img/trash.png"/></li>')
 
 	if (form_input === '') {
 		alert('Shopping item field is empty!');
@@ -12,7 +12,6 @@ var addItem = function(event) {
 		$('#form')[0].reset();
 		return false;
 	} else {
-		$('<br>').appendTo('#list');
 		$(item).appendTo('#list').hide().fadeIn(1500);
     	event.preventDefault();
     	$('#form')[0].reset();
@@ -57,7 +56,7 @@ var itemInList = function(form_input) {
 $(document).ready(function() {
 	$('#form').submit(addItem);
 	$('#list').on('click', '.delete', deleteItem);
-	$('#list').on('click', '.purchased', purchaseItem);	
+	$('#list').on('click', '.purchased', purchaseItem);
 	$('#item').focus();
 	//sortable list items
 	$('#list').sortable({ axis: "y" });
