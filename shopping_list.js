@@ -1,6 +1,6 @@
 var addItem = function(event) {
 	var form_input = $('#item').val().trim();	
-	var item = $('<li class="item"><img class="purchased" src="img/checkcircle.png"><span class="shopping">' + form_input + '<img class="delete" src="img/trash.png"</li>')
+	var item = $('<li class="item"><img class="purchased" src="img/checkcircle.png"><span>' + form_input + '</span><img class="delete" src="img/trash.png"/></li>')
 
 	if (form_input === '') {
 		alert('Shopping item field is empty!');
@@ -12,7 +12,7 @@ var addItem = function(event) {
 		$('#form')[0].reset();
 		return false;
 	} else {
-		$('<br>').appendTo('#list');
+		// $('<br>').appendTo('#list');
 		$(item).appendTo('#list').hide().fadeIn(1500);
     	event.preventDefault();
     	$('#form')[0].reset();
