@@ -11,12 +11,11 @@ var addItem = function(event) {
 		alert('This item is already on your list: ' + form_input);
 		$('#form')[0].reset();
 		return false;
-	} else {
-		// $('<br>').appendTo('#list');
+	} else {		
 		$(item).appendTo('#list').hide().fadeIn(1500);
-    	event.preventDefault();
-    	$('#form')[0].reset();
-    	$('#item').focus();
+    event.preventDefault();
+    $('#form')[0].reset();
+    $('#item').focus();
 	}
 };
 

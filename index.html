@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping List</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css"/>
+	<link rel="stylesheet" type="text/css" href="shopping_list.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="shopping_list.js"></script>
+</head>
+<body>		
+	<h1>Radha's Shopping List</h1>
+	<div id="container">
+	<form id="form">	
+	<input type="text" id="item" placeholder="Bananas" required/>
+		<input type="submit" id="submit" value="add item"/>
+	</form>
+	
+	<h3>(Drag to Re-Order)</h3>	
+	<ul id="list">
+	</ul>	
+		<div id="reset_button">
+			<p>Reset List<img class="reset" src="img/refresh_small.png" id="reset" value="reset list"/></p>
+		</div>
+	
+	</div>
+	
+
+</body>
+</html>
